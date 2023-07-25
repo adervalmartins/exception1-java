@@ -9,6 +9,7 @@ public class Reservation {
 	private Integer roomNumber ;
 	private Date checkIn ;
 	private Date checkOut;
+	
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Reservation(Integer roomNumber, Date checkIn, Date checkOut) {
@@ -32,7 +33,7 @@ public class Reservation {
 	
 	public long duration() {
 		long diff = checkOut.getTime() - checkIn.getTime();
-		return TimeUnit.DAYS.convert(diff, TimeUnit.MICROSECONDS);
+		return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
 	}
 	public void updateDates(Date checkIn, Date checkOut) {
 		this.checkIn = checkIn;
@@ -45,11 +46,11 @@ public class Reservation {
 			+ roomNumber
 			+ ", Entrada: "
 			+ sdf.format(checkIn)
-			+ ", Saida: "
+			+ ", Saída: "
 			+ sdf.format(checkOut)
 			+ ", "
 			+ duration()
-			+ "Noites";
+			+ " Noites";
 			
 	}
 }
