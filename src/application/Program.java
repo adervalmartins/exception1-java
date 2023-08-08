@@ -36,13 +36,13 @@ public class Program {
 			reservation.updateDates(checkIn, checkOut);
 			System.out.println("Reserva: " + reservation);
 		}
-		catch(ParseException erro) {
+		catch(ParseException e) {
 			System.out.println("Formato da Data Invalido!");
 		}
-		catch(DomainException erro) {
-			System.out.println("Erro in Reservation: " + erro.getMessage());
+		catch(DomainException e) {
+			System.out.println("Erro in Reservation: " + e.getMessage());
 		}
-		catch(RuntimeException erro) {
+		catch(RuntimeException e) {
 			System.out.println("Erro Inesperado! ");
 		}
 		sc.close();
